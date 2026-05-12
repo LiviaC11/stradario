@@ -51,3 +51,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// Aggiungi questo codice in fondo al tuo file autocomplete.js
+const btnCerca = document.querySelector('.btn-primary.btn-lg');
+const sezioneRisultati = document.getElementById('sezione-risultati');
+const resNuova = document.getElementById('res-nuova');
+
+btnCerca.addEventListener('click', function() {
+    const viaSelezionata = document.getElementById('nome_strada').value;
+
+    if (viaSelezionata.length >= 2) {
+        fetch('php/get_nuova_denominazione.php?via=' + encodeURIComponent(viaSelezionata))
+            .then(response => response.json())
+            .then(data => {
+                if (data.nuova_denominazione) {
+                    // 1. Inseriamo il risultato nel div
+                    resNuova.textContent = data.nuova_denominazione;
+                    // 2. Rendiamo visibile la card dei risultati
+                    sezioneRisultati.style.display = 'block';
+                    // 3. Scroll fluido verso il risultato (comodo su mobile)
+                    sezioneRisultati.scrollIntoView({ behavior: 'smooth' });
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert("Nessun dettaglio trovato per la via selezionata.");
+            });
+    } else {
+        alert("Per favore, seleziona una via dai suggerimenti.");
+    }
+});

@@ -58,12 +58,15 @@
                     </div>
 
                     <!-- Card Risultati Mobile-First -->
-                    <div class="card card-custom p-3 p-md-4">
-                        <h2 class="h6 mb-4 text-uppercase fw-bold text-secondary">Dettaglio Corrispondenza</h2>
-                        
-                       
-
-                        <hr class="my-4">
+                    <div id="sezione-risultati" class="card card-custom p-3 p-md-4" style="display: none;">
+    <h2 class="h6 mb-4 text-uppercase fw-bold text-secondary">Dettaglio Corrispondenza</h2>
+    
+    <div class="info-box">
+        <span class="label-storica">Denominazione attuale</span>
+        <div id="res-nuova" class="denominazione-testo text-primary fw-bold">-</div>
+    </div>
+    <hr class="my-4">
+    </div>
 
                         <!-- Area Azioni (Stampa) -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
