@@ -1,0 +1,11 @@
+# Cartelle delle librerie (dompdf e simili)
+libr/dompdf/
+vendor/
+
+# File di sistema e log
+*.log
+.DS_Store
+Thumbs.db
+
+# Database locali (se hai dei dump .sql pesanti)
+*.sql
