@@ -1,0 +1,59 @@
+/* style.css */
+
+/* style.css aggiornato */
+
+body { background-color: #f4f5f7; }
+
+.logo-comune {
+    /* Imposta una larghezza fissa o massima che stia bene col testo */
+    max-width: 60px; 
+    height: auto; /* Mantiene le proporzioni */
+    margin-right: 15px; /* Spazio tra logo e testo */
+}
+
+/* Allineamento verticale del titolo */
+.brand-title {
+    font-size: 1.8rem; /* Ridotto leggermente per armonizzarsi con un logo piccolo */
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+
+.card-custom { 
+    border-radius: 8px; 
+    border: none; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.info-box { 
+    border-left: 4px solid #0066cc; 
+    padding: 10px 15px; 
+    background: #fff;
+    margin-bottom: 1rem;
+}
+
+.label-storica { 
+    color: #757575; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+}
+
+.denominazione-testo { 
+    font-size: 1.2rem; 
+    color: #333; 
+    font-weight: 600; 
+}
+
+@media (max-width: 576px) {
+    /* Regolazioni per mobile per evitare che il titolo vada fuori schermo */
+    .brand-title { font-size: 1.2rem; } 
+    .header-custom img { width: 35px !important; }
+    
+    .u-page-section-heading { font-size: 1.1rem; }
+    .btn-lg { width: 100%; }
+    .logo-comune {
+        max-width: 80px;
+    }
+}
