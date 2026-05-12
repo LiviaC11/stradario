@@ -8,4 +8,4 @@ vendor/
 Thumbs.db
 
 # Database locali (se hai dei dump .sql pesanti)
-*.sql
+*.sqlgit rm -r --cached .git rm -r --cached .
