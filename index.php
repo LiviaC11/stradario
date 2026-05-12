@@ -36,9 +36,12 @@
                     <div class="mb-4 px-2">
                         <h1 class="h4 text-primary d-flex align-items-center">
                             <span class="icon it-search me-2"></span>
-                            Stradario Storico
+                            Nuovo Stradario
                         </h1>
-                        <p class="text-muted small">Consultazione delle variazioni toponomastiche del territorio.</p>
+                        <p class="text-muted small">Approvazione nuovo stradario dell'archivio 
+                            nazionale dei numeri civici e delle strade urbane (ANNCSU), 
+                            standarizzato secondo le regole fornite dall'instat.
+                        </p>
                     </div>
 
                     <!-- Card Form Ricerca -->
@@ -59,7 +62,7 @@
 
                     <!-- Card Risultati Mobile-First -->
                     <div id="sezione-risultati" class="card card-custom p-3 p-md-4" style="display: none;">
-    <h2 class="h6 mb-4 text-uppercase fw-bold text-secondary">Dettaglio Corrispondenza</h2>
+    <!--<h2 class="h6 mb-4 text-uppercase fw-bold text-secondary">Dettaglio Corrispondenza</h2> -->
     
     <div class="info-box">
         <span class="label-storica">Denominazione attuale</span>
