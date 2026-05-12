@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Aggiungi questo codice in fondo al tuo file autocomplete.js
+
 const btnCerca = document.querySelector('.btn-primary.btn-lg');
 const sezioneRisultati = document.getElementById('sezione-risultati');
 const resNuova = document.getElementById('res-nuova');
@@ -63,16 +63,31 @@ btnCerca.addEventListener('click', function() {
     if (viaSelezionata.length >= 2) {
         fetch('php/get_nuova_denominazione.php?via=' + encodeURIComponent(viaSelezionata))
             .then(response => response.json())
-            .then(data => {
-                if (data.nuova_denominazione) {
-                    // 1. Inseriamo il risultato nel div
-                    resNuova.textContent = data.nuova_denominazione;
-                    // 2. Rendiamo visibile la card dei risultati
-                    sezioneRisultati.style.display = 'block';
-                    // 3. Scroll fluido verso il risultato (comodo su mobile)
-                    sezioneRisultati.scrollIntoView({ behavior: 'smooth' });
-                }
-            })
+            // ... dentro la fetch di get_nuova_denominazione.php ...
+.then(data => {
+    if (data.nuova_denominazione) {
+        resNuova.textContent = data.nuova_denominazione;
+        sezioneRisultati.style.display = 'block';
+        sezioneRisultati.scrollIntoView({ behavior: 'smooth' });
+
+        // MODIFICA 1: Usiamo l'ID che hai messo nell'HTML
+        const btnStampa = document.getElementById('btn-stampa');
+        
+        if (btnStampa) {
+            btnStampa.onclick = function() {
+        const vecchiaVia = document.getElementById('nome_strada').value;
+        const nuovaVia = data.nuova_denominazione;
+
+        // Passiamo entrambi i parametri nell'URL
+        const url = 'php/genera_pdf.php?' + 
+                    'vecchia=' + encodeURIComponent(vecchiaVia) + 
+                    '&nuova=' + encodeURIComponent(nuovaVia);
+        
+        window.open(url, '_blank');
+    };
+        }
+    }
+})
             .catch(error => {
                 console.error('Errore:', error);
                 alert("Nessun dettaglio trovato per la via selezionata.");

@@ -62,26 +62,23 @@
 
                     <!-- Card Risultati Mobile-First -->
                     <div id="sezione-risultati" class="card card-custom p-3 p-md-4" style="display: none;">
-    <!--<h2 class="h6 mb-4 text-uppercase fw-bold text-secondary">Dettaglio Corrispondenza</h2> -->
-    
     <div class="info-box">
         <span class="label-storica">Denominazione attuale</span>
         <div id="res-nuova" class="denominazione-testo text-primary fw-bold">-</div>
     </div>
-    <hr class="my-4">
-    </div>
 
-                        <!-- Area Azioni (Stampa) -->
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
-                            <span class="text-muted small me-md-3 mb-2 mb-md-0 text-center text-md-start">
-                                <i class="icon it-info-circle"></i> Documento valido per fini amministrativi
-                            </span>
-                            <button class="btn btn-outline-primary btn-sm">
-                                <span class="icon it-print me-2"></span>
-                                Stampa Attestazione PDF
-                            </button>
-                        </div>
-                    </div>
+    <hr class="my-4">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
+        <span class="text-muted small me-md-3 mb-2 mb-md-0 text-center text-md-start">
+            <i class="icon it-info-circle"></i> Documento valido per fini amministrativi
+        </span>
+        <button id="btn-stampa" class="btn btn-outline-primary btn-sm">
+            <span class="icon it-print me-2"></span>
+            Stampa Attestazione PDF
+        </button>
+    </div>
+</div>
 
                 </div>
             </div>
