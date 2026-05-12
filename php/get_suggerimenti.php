@@ -6,7 +6,7 @@ if(isset($_GET['term'])){
     $term=$connection->real_escape_string($_GET['term']); //prevenzione SQL injection aggiunge / per rendere innocui gli '
     $sql_query = "SELECT DISTINCT dug, vecchia_denominazione 
                 FROM stradario 
-                WHERE vecchia_denominazione LIKE '$term%' 
+                WHERE vecchia_denominazione LIKE '%$term%' 
                 OR CONCAT(dug, ' ', vecchia_denominazione) LIKE '$term%'
                 LIMIT 5";
     $result=$connection->query($sql_query);
